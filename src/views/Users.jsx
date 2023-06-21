@@ -83,10 +83,10 @@ export function Users () {
     
     //    }
 
-    const arrayCustomer= [{photo:'../src/assets/logo/immofitnessLogo.jpg',nom:"Immo fitness club",phone:"678455665", echéance:"23/06/2023"},
-    {photo:'../src/assets/img/woman.jpg',nom:"Julie Atangana",phone:"689062212", echéance:"12/06/2023"}, {photo:'../src/assets/img/crossfit.jpg',nom:"Manuella Arcange",phone:"620093454", echéance:"21/06/2023"},
-    {photo:'../src/assets/img/fitnessBoy.jpg',nom:"Kenfack jeau de Dieu",phone:"698304566", echéance:"09/06/2023"},{photo:'../src/assets/img/fitnessBoy.jpg',nom:"Dieudonné",phone:"672445665", echéance:"13/06/2023"},
-    {photo:'../src/assets/logo/immofitnessLogo.jpg',nom:"karl snow",phone:"676455665", echéance:"11/06/2023"},
+    const arrayCustomer= [{photo:immofitnessLogo,nom:"Immo fitness club",phone:"678455665", echéance:"23/06/2023"},
+    {photo:woman,nom:"Julie Atangana",phone:"689062212", echéance:"12/06/2023"}, {photo:crossfit,nom:"Manuella Arcange",phone:"620093454", echéance:"21/06/2023"},
+    {photo:fitnessBoy,nom:"Kenfack jeau de Dieu",phone:"698304566", echéance:"09/06/2023"},{photo:woman,nom:"Dieudonné",phone:"672445665", echéance:"13/06/2023"},
+    {photo:immofitnessLogo,nom:"karl snow",phone:"676455665", echéance:"11/06/2023"},
 
 ]
 
