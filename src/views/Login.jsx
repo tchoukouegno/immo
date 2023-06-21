@@ -32,7 +32,7 @@ export function Login () {
 
         if(userInfo != null){
 
-            return navigate('/sideNavBar')
+            return navigate('/sideNavBar/dashboard')
     
         }
 

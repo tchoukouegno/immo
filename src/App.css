@@ -598,8 +598,12 @@ h2 {
 
  
   width: 100%;
-  height: 350px;
+  height: 320px;
   border: 1px solid #E8E8E8;
+  /* background-color: #F0136C; */
+ 
+  /* width: 800px; */
+  /* background-color: red; */
   
 
 
@@ -637,15 +641,35 @@ h2 {
 .arrayBody {
 
   background-color: #f7f7f773;
+  
+ 
 
 
 }
 
-.arrayhover:hover {
+.scrollContent {
 
-  background-color: #F7F7F7;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 270px;
+  
 
 }
+
+
+
+tr:hover {
+
+  background-color: #FFFFFF;
+  /* border: 1px solid red; */
+
+}
+
+/* td {
+
+  background-color: #f7f7f773;
+
+} */
 .customerPicture {
 
   width: 45px;

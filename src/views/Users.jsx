@@ -22,9 +22,6 @@ export function Users () {
     const userInfo = localStorage.getItem('userConnect');
 
     
-
-   
-
     useEffect(()=>{
 
         if(userInfo === null){
@@ -35,6 +32,63 @@ export function Users () {
 
 
     },[]);
+
+    const [selectValue, setSelectValue] = useState(5);
+    
+   const handleChangeSelect = (e)=>{     
+
+    setSelectValue(e.target.value);
+
+    // setCurrentPage(1);
+   
+    // setEmployeeData(employees);
+   
+    };
+
+    // const [currentPage, setCurrentPage]= useState(1);
+    // const recordsPerPage= selectValue;
+    // let lastIndex = currentPage * recordsPerPage ;
+    // let firstIndex = lastIndex  - recordsPerPage;
+    // const displayEmployeeList = employeeDataFilterList.slice(firstIndex, lastIndex);
+    // const nPage = Math.ceil(employees.length / recordsPerPage);
+    // const numbers = [...Array(nPage + 1).keys()].slice(1);
+
+    // const prevPage = ()=>{
+
+    //     if(currentPage !== 1 && dataInput.length === 0) {
+    
+        
+    //      setCurrentPage(currentPage - 1);
+        
+    
+    //     }
+    
+    
+    //    }
+    
+    //    const changePage = (page)=>{
+        
+    //     setCurrentPage(page) ;
+    
+    //    }
+    
+    //    const nextPage = ()=>{
+    
+    //     if(currentPage !== nPage && currentPage <= nPage && dataInput.length === 0) {
+    
+    //         setCurrentPage(currentPage + 1);
+    
+    //     }
+    
+    
+    //    }
+
+    const arrayCustomer= [{photo:'../src/assets/logo/immofitnessLogo.jpg',nom:"Immo fitness club",phone:"678455665", echéance:"23/06/2023"},
+    {photo:'../src/assets/img/woman.jpg',nom:"Julie Atangana",phone:"689062212", echéance:"12/06/2023"}, {photo:'../src/assets/img/crossfit.jpg',nom:"Manuella Arcange",phone:"620093454", echéance:"21/06/2023"},
+    {photo:'../src/assets/img/fitnessBoy.jpg',nom:"Kenfack jeau de Dieu",phone:"698304566", echéance:"09/06/2023"},{photo:'../src/assets/img/fitnessBoy.jpg',nom:"Dieudonné",phone:"672445665", echéance:"13/06/2023"},
+    {photo:'../src/assets/logo/immofitnessLogo.jpg',nom:"karl snow",phone:"676455665", echéance:"11/06/2023"},
+
+]
 
 
     const handleAdd = ()=>{
@@ -100,82 +154,36 @@ export function Users () {
             
                     </table>
 
-                    <table className='arrayBody'>
-        
-                        
-                            <tr>
-                    
-                                <td><img src={immofitnessLogo} className='customerPicture' /></td>
-                                <td>Immo fitness club</td>
-                                <td>678455665</td>
-                                <td>23/06/2023</td>
-                    
-                            </tr>
-                    
-    
-                    </table>
-
-                    <table className='arrayhover'>
-        
-                        
-                            <tr>
-                    
-                                <td><img src={woman} className='customerPicture' /></td>
-                                <td>Julie Atangana</td>
-                                <td>689062212</td>
-                                <td>12/06/2023</td>
-                    
-                            </tr>
-                    
-    
-                    </table>
+                    <div className='scrollContent'>
 
                     <table className='arrayBody'>
+
+                        {arrayCustomer.map((customer,index)=>(
+
+                                    <tr key={index}>
+
+                                        <td><img src={`${customer.photo}`} className='customerPicture' /></td>
+                                        <td>{customer.nom}</td>
+                                        <td>{customer.phone}</td>
+                                        <td>{customer.echéance}</td>
+
+
+                                    </tr>
+
+
+
+                                ))}
         
-                        
-                            <tr>
-                    
-                                <td><img src={crossfit} className='customerPicture' /></td>
-                                <td>Manuella Arcange</td>
-                                <td>620093454</td>
-                                <td>21/06/2023</td>
-                    
-                            </tr>
                     
     
                     </table>
 
-                    <table className='arrayhover'>
+                   
         
-                        
-                            <tr>
+                    </div>
                     
-                                <td><img src={fitnessBoy} className='customerPicture' /></td>
-                                <td>Kenfack jeau de Dieu</td>
-                                <td>698304566</td>
-                                <td>09/06/2023</td>
-                    
-                            </tr>
-                    
-    
-                    </table>
 
-                     <table className='arrayhover'>
-        
-                        
-                            <tr>
-                    
-                                <td><img src={fitnessBoy} className='customerPicture' /></td>
-                                <td>Kenfack jeau de Dieu</td>
-                                <td>698304566</td>
-                                <td>09/06/2023</td>
-                    
-                            </tr>
-                    
-    
-                    </table>
-        
-        
+                    </div>
 
                     <div className='arrayFooter'>
                             
@@ -189,7 +197,7 @@ export function Users () {
                                 <div>
 
                             
-                                    <select>
+                                    <select onChange={handleChangeSelect} value={selectValue}>
 
                                         <option value={5}>5rows</option>
                                         <option value={10}>10rows</option>
@@ -208,8 +216,6 @@ export function Users () {
 
                         <div className='prevOrNext'>Suiv.</div>
 
-
-                    </div>
 
                     </div>
 

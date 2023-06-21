@@ -42,7 +42,7 @@ export function Dashboard () {
 
                         <img src={dumbbellSolid} className='dumbbellSolid' alt='dumbbell-solid'/>
 
-                        <span className='summaryContext'>Total Salle de sport</span>
+                        <span className='summaryContext'>Total clients Salle de sport</span>
                     </div>
 
 
