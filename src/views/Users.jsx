@@ -100,13 +100,13 @@ export function Users () {
    
     };
 
-    // const [currentPage, setCurrentPage]= useState(1);
-    // const recordsPerPage= selectValue;
-    // let lastIndex = currentPage * recordsPerPage ;
-    // let firstIndex = lastIndex  - recordsPerPage;
-    // const displayEmployeeList = employeeDataFilterList.slice(firstIndex, lastIndex);
-    // const nPage = Math.ceil(employees.length / recordsPerPage);
-    // const numbers = [...Array(nPage + 1).keys()].slice(1);
+    const [currentPage, setCurrentPage]= useState(1);
+    const recordsPerPage= selectValue;
+    let lastIndex = currentPage * recordsPerPage ;
+    let firstIndex = lastIndex  - recordsPerPage;
+    const displaydata = datafilter.slice(firstIndex, lastIndex);
+    const nPage = Math.ceil(arrayData.length / recordsPerPage);
+    const numbers = [...Array(nPage + 1).keys()].slice(1);
 
     // const prevPage = ()=>{
 
@@ -208,7 +208,7 @@ export function Users () {
 
                     <table className='arrayBody'>
 
-                        {datafilter.map((customer,index)=>(
+                        {displaydata.map((customer,index)=>(
 
                                     <tr key={index}>
 
