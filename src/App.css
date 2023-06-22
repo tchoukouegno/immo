@@ -711,7 +711,7 @@ tr:hover {
 
   height: 33px;
   width: 450px;
-  border: 1px solid var(--primary-color);
+  border: 2px solid var(--primary-color);
   color: var(--primary-color);
   border-radius: 3px;
   text-align: center;
@@ -815,6 +815,19 @@ select {
 #errorFound {
 
   color: red;
+
+}
+
+.name {
+
+  border-top: 2px solid var(--primary-color);
+
+
+}
+
+.namehiddenShow {
+
+  border-top:none;
 
 }
 

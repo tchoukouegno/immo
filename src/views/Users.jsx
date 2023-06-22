@@ -5,7 +5,7 @@
 
  */
 import { useEffect, useState} from 'react';
-import { useNavigate, Outlet } from "react-router-dom";
+import { useNavigate, Outlet, json } from "react-router-dom";
 import immofitnessLogo from "../assets/logo/immofitnessLogo.jpg"
 import woman from "../assets/img/woman.jpg"
 import crossfit from "../assets/img/crossfit.jpg"
@@ -21,9 +21,11 @@ export function Users () {
     {photo:immofitnessLogo,nom:"karl snow",phone:"676455665", echéance:"11/06/2023"},
 
 ]
+
+    localStorage.setItem('arraycustomer', JSON.stringify(arrayCustomer))
     const [showButton, setShowButton] = useState(true);
 
-    
+   
 
     let navigate = useNavigate();
 
@@ -41,7 +43,7 @@ export function Users () {
 
     },[]);
 
-    const [arrayData, setArrayDate]= useState(arrayCustomer);
+    const [arrayData, setArrayData]= useState(arrayCustomer);
     const [dataInput, setDataInput] = useState("");
 
     const string = dataInput;
@@ -79,9 +81,9 @@ export function Users () {
         
         setDataInput(e.target.value);
 
-        // setCurrentPage(1); 
-        
-        // setEmployeeData(employees);
+        setCurrentPage(1);
+   
+        setArrayData(arrayData);
        
     }
 
@@ -94,9 +96,9 @@ export function Users () {
 
     setSelectValue(e.target.value);
 
-    // setCurrentPage(1);
+    setCurrentPage(1);
    
-    // setEmployeeData(employees);
+    setArrayData(arrayData);
    
     };
 
@@ -150,9 +152,114 @@ export function Users () {
 
     };
 
-    console.log(currentPage)
 
-    console.log(nPage)
+    const filterByName = (arrayOfElements, nameOfFilter)=>{
+
+        return arrayOfElements.sort((a, b)=>{
+
+
+            if(nameOfFilter === "nom"){
+    
+                return a.nom.localeCompare(b.nom);
+    
+            }
+    
+            if(nameOfFilter === "phone"){
+    
+                return a.phone.localeCompare(b.phone);
+    
+            }
+    
+            if(nameOfFilter === "echéance"){
+    
+                return a.echéance.localeCompare(b.echéance);
+    
+            }
+    
+           
+    
+            return a.localeCompare(b);
+        });  
+    
+
+
+
+
+    }
+
+   const [filterNameShow, setFilterNameShow]= useState(true);
+   const [filterPhoneShow, setFilterPhoneShow]= useState(true);
+   const [filterEcheanceShow, setFilterEcheanceShow]= useState(true);
+
+
+   const handleFilterName= ()=>{
+
+        setFilterNameShow(!filterNameShow);
+        setFilterPhoneShow(true);
+        setFilterEcheanceShow(true);
+
+        if(filterNameShow === true) {
+
+            setArrayData(filterByName(arrayData,"nom"));
+
+        } else {
+
+            const initialArray = localStorage.getItem('arraycustomer');
+
+            setArrayData(JSON.parse(initialArray));
+        }
+
+       
+
+        
+
+
+   };
+
+   const handlefilterPhone= ()=>{
+
+    setFilterPhoneShow(!filterPhoneShow);
+    setFilterEcheanceShow(true);
+    setFilterNameShow(true);
+
+    if(filterPhoneShow === true) {
+
+        setArrayData(filterByName(arrayData,"phone"));
+
+    }else {
+
+        const initialArray = localStorage.getItem('arraycustomer');
+
+        setArrayData(JSON.parse(initialArray));
+    }
+
+
+};
+
+const handlefilterEcheance= ()=>{
+
+    setFilterEcheanceShow(!filterEcheanceShow);
+    setFilterPhoneShow(true);
+    setFilterNameShow(true);
+
+    if(filterEcheanceShow === true) {
+
+        setArrayData(filterByName(arrayData,"echéance"));
+
+    }else {
+
+        const initialArray = localStorage.getItem('arraycustomer');
+
+        setArrayData(JSON.parse(initialArray));
+    }
+
+
+
+};
+
+    
+
+
 
    
     return (
@@ -189,17 +296,11 @@ export function Users () {
                             <tr>
                                 
 
-
-
                                     <td>Photo</td>
-                                    <td>Nom complet</td>
-                                    <td>Téléphone</td>
-                                    <td>Echéance</td>
-                                {/* {employeeTitle.map((employee)=>(
-
-                                    <td key={employee.data} onClick={()=>handleClick(employee.data)}>{employee.title}</td>
-
-                                ))} */}
+                                    <td onClick={handleFilterName} className={filterNameShow ?  "namehiddenShow": "name" }>Nom complet</td>
+                                    <td onClick={handlefilterPhone} className={filterPhoneShow ? "namehiddenShow": "name"}>Téléphone</td>
+                                    <td onClick={handlefilterEcheance } className={filterEcheanceShow ? "namehiddenShow": "name"}>Echéance</td>
+                               
             
                             </tr>
                             
@@ -257,7 +358,7 @@ export function Users () {
 
                     <div className='arrayFooter'>
                             
-                        <div className={`${currentPage !==1 ? 'activeChange' : 'prevOrNext'}`} onClick={prevPage} >Préc.</div>
+                        <div className={`${currentPage !==1 && dataInput.length === 0 ? 'activeChange' : 'prevOrNext'}`} onClick={prevPage} >Préc.</div>
 
                         <div className='sizeArray'>
 
