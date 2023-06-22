@@ -244,7 +244,7 @@ const handlefilterEcheance= ()=>{
 
     if(filterEcheanceShow === true) {
 
-        setArrayData(filterByName(arrayData,"echéance"));
+        setArrayData(filterByName(arrayData,"echéance").reverse());
 
     }else {
 
