@@ -262,7 +262,9 @@ export function Users () {
                         <div className='sizeArray'>
 
 
-                                <div>Page <input type="number" className='pageInput' value={currentPage} />  /{nPage}</div>
+                                <div>Page  {currentPage} /{nPage}</div>
+
+                                {/* <input type="number" className='pageInput' /> */}
 
                                 <div>
 
