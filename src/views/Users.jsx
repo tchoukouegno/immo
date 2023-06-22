@@ -108,18 +108,18 @@ export function Users () {
     const nPage = Math.ceil(arrayData.length / recordsPerPage);
     const numbers = [...Array(nPage + 1).keys()].slice(1);
 
-    // const prevPage = ()=>{
+    const prevPage = ()=>{
 
-    //     if(currentPage !== 1 && dataInput.length === 0) {
+        if(currentPage !== 1 && dataInput.length === 0) {
     
         
-    //      setCurrentPage(currentPage - 1);
+         setCurrentPage(currentPage - 1);
         
     
-    //     }
+        }
     
     
-    //    }
+       }
     
     //    const changePage = (page)=>{
         
@@ -127,16 +127,16 @@ export function Users () {
     
     //    }
     
-    //    const nextPage = ()=>{
+       const nextPage = ()=>{
     
-    //     if(currentPage !== nPage && currentPage <= nPage && dataInput.length === 0) {
+        if(currentPage !== nPage && currentPage <= nPage && dataInput.length === 0) {
     
-    //         setCurrentPage(currentPage + 1);
+            setCurrentPage(currentPage + 1);
     
-    //     }
+        }
     
     
-    //    }
+       }
 
    
 
@@ -208,9 +208,13 @@ export function Users () {
 
                     <table className='arrayBody'>
 
-                        {displaydata.map((customer,index)=>(
+                       
 
-                                    <tr key={index}>
+                        { displaydata.length !== 0 ?displaydata.map((customer,index)=>(
+
+                                    <tbody key={index}>
+
+                                    <tr>
 
                                         <td><img src={`${customer.photo}`} className='customerPicture' /></td>
                                         <td>{customer.nom}</td>
@@ -220,9 +224,21 @@ export function Users () {
 
                                     </tr>
 
+                                    </tbody>
 
+                                ))
+                                
+                                
+                            :
+                            <tbody id='errorFound' >
 
-                                ))}
+                                    <tr ><td >No matching records found</td></tr>
+
+                            </tbody>
+                            
+                            
+                            
+                            }
         
                     
     
@@ -237,7 +253,7 @@ export function Users () {
 
                     <div className='arrayFooter'>
                             
-                        <div className='prevOrNext'>Préc.</div>
+                        <div className={`${currentPage !==1 ? 'activeChabnge' : 'prevOrNext'}`} onClick={prevPage} >Préc.</div>
 
                         <div className='sizeArray'>
 
@@ -264,7 +280,7 @@ export function Users () {
 
                         </div>
 
-                        <div className='prevOrNext'>Suiv.</div>
+                        <div className= {` ${currentPage !== nPage && currentPage <= nPage && dataInput.length === 0   ? 'activeChabnge' : 'prevOrNext'}`}  onClick={nextPage}>Suiv.</div>
 
 
                     </div>

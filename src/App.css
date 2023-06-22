@@ -641,6 +641,8 @@ h2 {
 .arrayBody {
 
   background-color: #f7f7f773;
+  /* position: relative; */
+  width: 100%;
   
  
 
@@ -652,6 +654,7 @@ h2 {
   overflow-y: auto;
   overflow-x: hidden;
   max-height: 270px;
+  position: relative;
   
 
 }
@@ -701,7 +704,29 @@ tr:hover {
   text-align: center;
   font-size: 1.2rem;
   padding-top: 7px;
+
+}
+
+.activeChabnge {
+
+  height: 33px;
+  width: 450px;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  border-radius: 3px;
+  text-align: center;
+  font-size: 1.2rem;
+  padding-top: 7px;
   cursor: pointer;
+  transition: all 0.4s ease-in-out;
+
+}
+
+.activeChabnge:hover {
+
+  background-color: var(--primary-color);
+  color: #FFFFFF;
+  transition: all 0.6s ease-in-out;
 
 
 }
@@ -784,6 +809,11 @@ select {
   position: absolute;
   bottom: 20px;
 
+}
+
+#errorFound {
+
+  color: red;
 
 }
 
