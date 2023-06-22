@@ -150,6 +150,10 @@ export function Users () {
 
     };
 
+    console.log(currentPage)
+
+    console.log(nPage)
+
    
     return (
 
@@ -253,12 +257,12 @@ export function Users () {
 
                     <div className='arrayFooter'>
                             
-                        <div className={`${currentPage !==1 ? 'activeChabnge' : 'prevOrNext'}`} onClick={prevPage} >Préc.</div>
+                        <div className={`${currentPage !==1 ? 'activeChange' : 'prevOrNext'}`} onClick={prevPage} >Préc.</div>
 
                         <div className='sizeArray'>
 
 
-                                <div>Page <input type="number" className='pageInput' />  /1</div>
+                                <div>Page <input type="number" className='pageInput' value={currentPage} />  /{nPage}</div>
 
                                 <div>
 
@@ -280,7 +284,7 @@ export function Users () {
 
                         </div>
 
-                        <div className= {` ${currentPage !== nPage && currentPage <= nPage && dataInput.length === 0   ? 'activeChabnge' : 'prevOrNext'}`}  onClick={nextPage}>Suiv.</div>
+                        <div className= {` ${currentPage !== nPage && currentPage <= nPage && dataInput.length === 0   ? 'activeChange' : 'prevOrNext'}`}  onClick={nextPage}>Suiv.</div>
 
 
                     </div>

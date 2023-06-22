@@ -707,7 +707,7 @@ tr:hover {
 
 }
 
-.activeChabnge {
+.activeChange {
 
   height: 33px;
   width: 450px;
@@ -722,7 +722,7 @@ tr:hover {
 
 }
 
-.activeChabnge:hover {
+.activeChange:hover {
 
   background-color: var(--primary-color);
   color: #FFFFFF;
@@ -747,6 +747,7 @@ tr:hover {
 
   width: 50px;
   height: 20px;
+  font-size: 1.2rem;
 
 }
 
