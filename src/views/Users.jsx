@@ -16,9 +16,9 @@ import fitnessBoy from "../assets/img/fitnessBoy.jpg"
 export function Users () {
 
     const arrayCustomer= [{photo:immofitnessLogo,nom:"Immo fitness club",phone:"678455665", echéance:"23/06/2023"},
-    {photo:woman,nom:"Julie Atangana",phone:"689062212", echéance:"12/06/2023"}, {photo:crossfit,nom:"Manuella Arcange",phone:"620093454", echéance:"21/06/2023"},
-    {photo:fitnessBoy,nom:"Kenfack jeau de Dieu",phone:"698304566", echéance:"09/06/2023"},{photo:woman,nom:"Dieudonné",phone:"672445665", echéance:"13/06/2023"},
-    {photo:immofitnessLogo,nom:"karl snow",phone:"676455665", echéance:"11/06/2023"},
+    {photo:woman,nom:"Julie Atangana",phone:"689062212", echéance:"25/06/2023"}, {photo:crossfit,nom:"Manuella Arcange",phone:"620093454", echéance:"22/06/2023"},
+    {photo:fitnessBoy,nom:"Kenfack jeau de Dieu",phone:"698304566", echéance:"09/06/2023"},{photo:woman,nom:"Dieudonné",phone:"672445665", echéance:"27/06/2023"},
+    {photo:immofitnessLogo,nom:"karl snow",phone:"676455665", echéance:"29/06/2023"},
 
 ]
 
@@ -259,6 +259,18 @@ const handlefilterEcheance= ()=>{
 
     
 
+    const isDateBeforeEndOfMonth = (dateString) => {
+
+        const normeDate=dateString.split("/").reverse().join("-");
+        console.log(normeDate)
+        const date = new Date(normeDate);
+        const endOfMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+        const diffInDays = Math.ceil((endOfMonth.getTime() - date.getTime()) / (1000 * 60 * 60 * 24));
+        return diffInDays <= 7;
+      };
+
+    
+
 
 
    
@@ -324,7 +336,7 @@ const handlefilterEcheance= ()=>{
                                         <td><img src={`${customer.photo}`} className='customerPicture' /></td>
                                         <td>{customer.nom}</td>
                                         <td>{customer.phone}</td>
-                                        <td>{customer.echéance}</td>
+                                        <td style={{ color: isDateBeforeEndOfMonth(customer.echéance) ? 'red' : 'black' }} >{customer.echéance}</td>
 
 
                                     </tr>
