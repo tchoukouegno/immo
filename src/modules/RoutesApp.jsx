@@ -12,6 +12,8 @@ import { Dashboard } from '../views/Dashboard';
 import {AddUsers} from '../views/AddUsers';
 import { Manager } from '../views/Manager';
 import {Employee} from '../views/Employee';
+import {ImmoGYM} from '../views/ImmoGYM';
+import { Spa } from '../views/Spa';
 
 
 
@@ -32,6 +34,10 @@ export function RoutesApp () {
                         <Route path='/login' element={<Login/>}/>
 
                         <Route path='/manager' element={<Manager/>}>
+
+                             <Route path='/manager/immoGYM' element={<ImmoGYM/>}/>
+
+                             <Route path='/manager/spa' element={<Spa/>}/>
 
                              <Route path='/manager/employee' element={<Employee/>}/>
 
