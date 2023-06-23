@@ -13,12 +13,12 @@ import fitnessBoy from "../assets/img/fitnessBoy.jpg"
 
 
 
-export function Users () {
+export function Employee () {
 
-    const arrayCustomer= [{photo:immofitnessLogo,nom:"Immo fitness club",phone:"678455665", echéance:"23/06/2023"},
-    {photo:woman,nom:"Julie Atangana",phone:"689062212", echéance:"25/06/2023"}, {photo:crossfit,nom:"Manuella Arcange",phone:"620093454", echéance:"22/06/2023"},
-    {photo:fitnessBoy,nom:"Kenfack jeau de Dieu",phone:"698304566", echéance:"09/06/2023"},{photo:woman,nom:"Dieudonné",phone:"672445665", echéance:"27/06/2023"},
-    {photo:immofitnessLogo,nom:"karl snow",phone:"676455665", echéance:"29/06/2023"},
+    const arrayCustomer= [{photo:immofitnessLogo,nom:"TATIANA",phone:"SECRET/RECEP", echéance:"61344 "},
+    {photo:woman,nom:"JEANNE",phone:"SECRET/RECEP", echéance:"60000"}, {photo:crossfit,nom:"EDIMA ",phone:"COACH", echéance:"100000"},
+    {photo:fitnessBoy,nom:"KEVIN",phone:"COACH", echéance:"100000"},{photo:woman,nom:"BONIFACE ",phone:"COMPTABLE", echéance:"30000"},
+    {photo:immofitnessLogo,nom:"DORIS",phone:"RESTAURANT", echéance:"60000"},
 
 ]
 
@@ -292,10 +292,8 @@ const handlefilterEcheance= ()=>{
 
        <Outlet/>
 
-       {showButton&& <button onClick={handleAdd} className='goToAddUser'>+</button> }
 
-
-            <h3 className='users'>Clients</h3>
+            <h3 className='users'>Employés</h3>
 
                 <div className='arrayContainer'>
 
@@ -318,9 +316,9 @@ const handlefilterEcheance= ()=>{
                                 
 
                                     <td>Photo</td>
-                                    <td onClick={handleFilterName} className={filterNameShow ?  "namehiddenShow": "name" }>Nom complet</td>
-                                    <td onClick={handlefilterPhone} className={filterPhoneShow ? "namehiddenShow": "name"}>Téléphone</td>
-                                    <td onClick={handlefilterEcheance } className={filterEcheanceShow ? "namehiddenShow": "name"}>Echéance</td>
+                                    <td onClick={handleFilterName} className={filterNameShow ?  "namehiddenShow": "name" }>Nom </td>
+                                    <td onClick={handlefilterPhone} className={filterPhoneShow ? "namehiddenShow": "name"}>Poste</td>
+                                    <td onClick={handlefilterEcheance } className={filterEcheanceShow ? "namehiddenShow": "name"}>Salaire</td>
                                
             
                             </tr>

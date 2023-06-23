@@ -18,13 +18,16 @@ export function AddUsers() {
     const userInfo = localStorage.getItem('userConnect');
 
    
+    const adminConnect = localStorage.getItem('adminConnect');
+
+    
     useEffect(()=>{
 
-        if(userInfo === null){
+        if(userInfo === null && adminConnect === null ){
 
             return navigate('/login')
     
-        }
+        }       
 
 
     },[]);
@@ -32,6 +35,12 @@ export function AddUsers() {
     const handleBack = (e)=>{
 
         // e.preventDefault();
+
+        if(adminConnect !== null) {
+
+            return  navigate('/manager/Users');
+
+        }
 
        
 

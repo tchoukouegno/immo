@@ -9,10 +9,23 @@ import {  NavLink, useNavigate, Outlet } from "react-router-dom";
 import user from '../assets/icons/user.svg';
 import dashboard from '../assets/icons/dashboard.svg';
 import immofitnessLogo from '../assets/logo/immofitnessLogo.jpg';
-import logout from '../assets/icons/logout.svg'
+import logout from '../assets/icons/logout.svg';
+import dumbbellSolid from '../assets/icons/dumbbellSolid.svg';
+import pieChart from '../assets/icons/pieChart.svg';
+import fishSolid from '../assets/icons/fishSolid.svg';
+import waterSolid from '../assets/icons/waterSolid.svg';
 
 
-export function SideNavBar () {
+
+
+
+
+
+
+export function Manager() {
+
+
+
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -31,19 +44,18 @@ export function SideNavBar () {
     }
 
     
-    const adminConnect = localStorage.getItem('adminConnect');
 
+    // useEffect(()=>{
+
+    //     if(userInfo === null){
+
+    //         return navigate('/login')
     
-    useEffect(()=>{
-
-        if(userInfo === null && adminConnect === null ){
-
-            return navigate('/login')
-    
-        }       
+    //     }
 
 
-    },[]);
+    // },[]);
+
 
     const handleLogout = ()=>{
 
@@ -85,9 +97,16 @@ export function SideNavBar () {
                         <div className='menuNav'>
                            
                             <div className='navItem'>
-                            <img className='iconsSize' src={dashboard}/>
-                            
-                            <NavLink className={isOpen ? "displayItem" : "offItem"} to="/sideNavBar/dashboard">Dashboard</NavLink>
+                                <img className='iconsSize' src={dashboard}/>
+                                
+                                <NavLink className={isOpen ? "displayItem" : "offItem"} to="/sideNavBar/dashboard">Dashboard</NavLink>
+
+                            </div>
+
+                            <div className='navItem'>
+                                <img className='iconsSize' src={pieChart}/>
+                                
+                                <NavLink className={isOpen ? "displayItem" : "offItem"} to="/sideNavBar/dashboard">Statistiques</NavLink>
 
                             </div>
                            
@@ -95,7 +114,39 @@ export function SideNavBar () {
 
                              <img className='iconsSize' src={user}/>
 
-                            <NavLink className={isOpen ? "displayItem" : "offItem"} to="/sideNavBar/Users">Clients</NavLink>
+                            <NavLink className={isOpen ? "displayItem" : "offItem"} to="/manager/Users">Clients</NavLink>
+
+                           </div>
+
+                           <div className='navItem'>
+
+                             <img className='iconsSize' src={user}/>
+
+                            <NavLink className={isOpen ? "displayItem" : "offItem"} to="/manager/employee">Employés</NavLink>
+
+                           </div>
+
+                           <div className='navItem'>
+
+                             <img className='iconsSize' src={dumbbellSolid}/>
+
+                            <NavLink className={isOpen ? "displayItem" : "offItem"} to="/sideNavBar/Users">Immo-GYM</NavLink>
+
+                           </div>
+
+                           <div className='navItem'>
+
+                             <img className='iconsSize' src={waterSolid}/>
+
+                            <NavLink className={isOpen ? "displayItem" : "offItem"} to="/sideNavBar/Users">Immo-SPA</NavLink>
+
+                           </div>
+
+                           <div className='navItem'>
+
+                             <img className='iconsSize' src={fishSolid}/>
+
+                            <NavLink className={isOpen ? "displayItem" : "offItem"} to="/sideNavBar/Users">Immo-RESTO</NavLink>
 
                            </div>
 
@@ -128,6 +179,23 @@ export function SideNavBar () {
 
 
     );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

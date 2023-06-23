@@ -9,7 +9,9 @@ import { Login } from "../views/Login";
 import { SideNavBar } from '../views/SideNavBar';
 import { Users } from '../views/Users';
 import { Dashboard } from '../views/Dashboard';
-import {AddUsers} from '../views/AddUsers'
+import {AddUsers} from '../views/AddUsers';
+import { Manager } from '../views/Manager';
+import {Employee} from '../views/Employee';
 
 
 
@@ -29,7 +31,18 @@ export function RoutesApp () {
                         
                         <Route path='/login' element={<Login/>}/>
 
-                        <Route path='/login' element={<Login/>}/>
+                        <Route path='/manager' element={<Manager/>}>
+
+                             <Route path='/manager/employee' element={<Employee/>}/>
+
+                            <Route path='/manager/Users' element={<Users/>}>
+                                
+                                 <Route path='/manager/Users/AddUsers' element={<AddUsers/>}/>
+                                
+                            </Route>
+                            
+                        </Route>
+
 
                         <Route path='/sideNavBar' element={<SideNavBar/>}>
 

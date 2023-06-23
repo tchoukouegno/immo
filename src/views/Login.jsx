@@ -85,6 +85,13 @@ export function Login () {
 
             };
 
+            if(responseConnection.message === "admin") {
+
+               
+                return localStorage.setItem('adminConnect', JSON.stringify(responseConnection.authorization)),navigate("/manager");
+
+            };
+
             return localStorage.setItem('userConnect', JSON.stringify(responseConnection)), navigate("/sideNavBar/dashboard");
         
 
