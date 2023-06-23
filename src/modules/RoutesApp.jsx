@@ -16,6 +16,7 @@ import {ImmoGYM} from '../views/ImmoGYM';
 import { Spa } from '../views/Spa';
 import {Resto} from '../views/Resto';
 import {AdminDashboard} from '../views/AdminDashboard';
+import {FitnessChart} from '../views/FitnessChart';
 
 
 
@@ -36,6 +37,8 @@ export function RoutesApp () {
                         <Route path='/login' element={<Login/>}/>
 
                         <Route path='/manager' element={<Manager/>}>
+
+                                <Route path='/manager/FitnessChart' element={<FitnessChart/>}/>
 
                              <Route path='/manager/adminDashboard' element={<AdminDashboard/>}/>
 

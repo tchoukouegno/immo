@@ -106,7 +106,7 @@ export function Manager() {
                             <div className='navItem'>
                                 <img className='iconsSize' src={pieChart}/>
                                 
-                                <NavLink className={isOpen ? "displayItem" : "offItem"} to="/sideNavBar/dashboard">Statistiques</NavLink>
+                                <NavLink className={isOpen ? "displayItem" : "offItem"} to="/manager/FitnessChart">Statistique</NavLink>
 
                             </div>
                            
