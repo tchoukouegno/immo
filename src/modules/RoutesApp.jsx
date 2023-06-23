@@ -14,6 +14,8 @@ import { Manager } from '../views/Manager';
 import {Employee} from '../views/Employee';
 import {ImmoGYM} from '../views/ImmoGYM';
 import { Spa } from '../views/Spa';
+import {Resto} from '../views/Resto';
+import {AdminDashboard} from '../views/AdminDashboard';
 
 
 
@@ -35,9 +37,13 @@ export function RoutesApp () {
 
                         <Route path='/manager' element={<Manager/>}>
 
+                             <Route path='/manager/adminDashboard' element={<AdminDashboard/>}/>
+
                              <Route path='/manager/immoGYM' element={<ImmoGYM/>}/>
 
                              <Route path='/manager/spa' element={<Spa/>}/>
+
+                             <Route path='/manager/resto' element={<Resto/>}/>
 
                              <Route path='/manager/employee' element={<Employee/>}/>
 

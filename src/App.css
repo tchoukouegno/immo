@@ -782,6 +782,9 @@ select {
 .dashboardContainer {
 
   padding-top: 30px;
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
 
 }
 
@@ -831,6 +834,17 @@ select {
 
 }
 
+#gradientColor {
+
+  background-image: linear-gradient(to left, #37B86C, #24DBA0);
+
+}
+
+#gradientColorSortie {
+
+  background-image: linear-gradient(to left, #6A66F5, #3FAEF3);
+
+}
 
 
 

@@ -13,7 +13,7 @@ import fitnessBoy from "../assets/img/fitnessBoy.jpg"
 
 
 
-export function Spa () {
+export function Resto () {
 
     const arrayCustomer= [{photo:"139.850 ",nom:"",phone:"117.500 ", echéance:"01/05/2023"},
     {photo:"259.500",nom:"transport Mr Paulin 2000",phone:"204.500", echéance:"02/05/2023"}, {photo:"124.000 ",nom:"surfilage serviettes",phone:"88.000", echéance:"04/05/2023"},
@@ -22,7 +22,7 @@ export function Spa () {
 
 ]
 
-const arrayRecap= [{photo:"697.500 ",nom:"12.500 ",phone:"685.000 ", echéance:"232.750",month:"mai",gains:"452.250"},
+const arrayRecap= [{photo:"205.500 ",nom:"104.500",phone:"101.000 ", echéance:"60.000 ",month:"mai",gains:"41.000"},
 
 ]
 
@@ -299,7 +299,7 @@ const handlefilterEcheance= ()=>{
     
 
 
-            <h3 className='users'>IMMO-SPA</h3>
+            <h3 className='users'>IMMO-RESTO </h3>
 
                 <div className='arrayContainer'>
 

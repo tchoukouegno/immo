@@ -99,7 +99,7 @@ export function Manager() {
                             <div className='navItem'>
                                 <img className='iconsSize' src={dashboard}/>
                                 
-                                <NavLink className={isOpen ? "displayItem" : "offItem"} to="/sideNavBar/dashboard">Dashboard</NavLink>
+                                <NavLink className={isOpen ? "displayItem" : "offItem"} to="/manager/adminDashboard">Dashboard</NavLink>
 
                             </div>
 
@@ -146,7 +146,7 @@ export function Manager() {
 
                              <img className='iconsSize' src={fishSolid}/>
 
-                            <NavLink className={isOpen ? "displayItem" : "offItem"} to="/sideNavBar/Users">Immo-RESTO</NavLink>
+                            <NavLink className={isOpen ? "displayItem" : "offItem"} to="/manager/resto">Immo-RESTO</NavLink>
 
                            </div>
 
