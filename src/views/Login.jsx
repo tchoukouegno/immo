@@ -12,6 +12,7 @@ import { controlInputSign } from '../modules/controlInputSign';
 import { snackbar } from '../widget/snackbar';
 import { checkDataAuthorization } from '../modules/checkDataAuthorization';
 import {  useNavigate } from "react-router-dom";
+import info from '../assets/icons/info.svg'
 
 
 
@@ -66,13 +67,13 @@ export function Login () {
 
             if(result.message === "Veillez remplir les champs SVP!!!") {
 
-                return snackbar(document.querySelector("#root"),"../src/assets/icons/info.svg", result.message, 3000);
+                return snackbar(document.querySelector("#root"),info, result.message, 3000);
 
             };
 
             if(result.message === "Vous n'avez pas d'autorisation") {
 
-            return snackbar(document.querySelector("#root"),"../src/assets/icons/info.svg", result.message, 3000);
+            return snackbar(document.querySelector("#root"),info, result.message, 3000);
 
             };
 
@@ -81,7 +82,7 @@ export function Login () {
 
             if(responseConnection.message === "Vous n'avez pas d'autorisation") {
 
-            return snackbar(document.querySelector("#root"),"../src/assets/icons/info.svg", responseConnection.message, 3000);
+            return snackbar(document.querySelector("#root"),info, responseConnection.message, 3000);
 
             };
 
